@@ -12,6 +12,7 @@
     --text-color: #757575;
     --header-color: #212121;
     --accent-text: #2196F3;
+    --main-cub: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,h1,h2,h3,h4,h5,h6 {
@@ -118,6 +119,8 @@ body {
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0.02em;
+
+    transition: color 250ms var(--main-cub);
 }
 
 .site-nav a:hover, 
@@ -125,6 +128,40 @@ body {
     color: var(--accent-text);
 }
 
+.site-nav-item {
+    position: relative;
+}
+
+.site-nav .studio-link::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(37px);
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+    
+    
+        background: #2196F3;
+        border-radius: 2px;
+    }
+
+.site-nav .portfolio-link::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(37px);
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+
+
+    background: #2196F3;
+    border-radius: 2px;
+}
+    
 .site-nav .portfolio-link {
     color: var(--accent-text);
 }
@@ -148,6 +185,8 @@ body {
     letter-spacing: 0.02em;
     color: var(--text-color);
     text-decoration: none;
+
+    transition: color 250ms var(--main-cub);
 }
 
 .contacts a:hover,
@@ -329,6 +368,34 @@ letter-spacing: 0.03em;
     display: flex;
 }
 
+.work-item {
+    position: relative;
+}
+
+.work-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 370px;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+}
+
+.work-text {
+    
+    font-weight: 700;
+    line-height: calc(16/14);
+    text-align: center;
+    text-transform: uppercase;
+    
+    
+    color: #FFFFFF;
+}
+
 .work-item:not(:last-child) {
     margin-right: 30px;
 }
@@ -411,12 +478,16 @@ letter-spacing: 0.03em;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: background-color 250ms var(--main-cub);
 }
 
 .team-icon {
     width: 20px;
     height: 20px;
     fill: #AFB1B8;
+
+    transition: fill 250ms var(--main-cub);
 }
 
 .team-social-link:hover,
@@ -468,12 +539,16 @@ letter-spacing: 0.03em;
  display: flex;
  align-items: center;
  justify-content: center;
+
+ transition: border-color 250ms var(--main-cub);
 }
 
 .clients-icon {
     width: 106px;
     height: 60px;
     fill: #AFB1B8;
+
+    transition: fill 250ms var(--main-cub);
 }
 
 .clients-link:hover,
@@ -548,6 +623,8 @@ letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);;
     text-decoration: none;
     font-style: normal;
+
+    transition: color 250ms var(--main-cub);
 }
 
 .contacts-list .address:hover,
@@ -590,12 +667,16 @@ letter-spacing: 0.03em;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+
+    transition: background-color 250ms var(--main-cub);
 }
 
 .social-item-link .icon {
     width: 20px;
     height: 20px;
     fill: var(--bgc);
+
+    transition: fill 250ms var(--main-cub);
 }
 
 .social-item-link:hover,
@@ -645,6 +726,8 @@ letter-spacing: 0.03em;
 
     min-width: 73px;
     padding: 6px 22px;
+
+    transition: box-shadow 250ms var(--main-cub), background-color 250ms var(--main-cub), color 250ms var(--main-cub);
 }
 
 
@@ -678,6 +761,8 @@ letter-spacing: 0.03em;
 
 .project-link {
     display: block;
+
+    transition: box-shadow 250ms var(--main-cub);
 }
 
 .project-link:hover,
@@ -720,3 +805,36 @@ li h2 {
     line-height: 1.87;
 }
 
+.project-item:hover .project-box {
+    transform: translateY(0);
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translateY(100%);
+   
+    display: flex;
+    align-items: center;
+
+    padding: 63px 24px;
+    width: 370px;
+    height: 294px;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transition: transform 250ms var(--main-cub);
+}
+
+.project-box .project-box-text {
+    font-size: 18px;
+    line-height: calc(28/18);
+    
+    color: #FFFFFF;
+}

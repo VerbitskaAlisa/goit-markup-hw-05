@@ -852,6 +852,10 @@ li h2 {
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.2);
+
+    opacity: 1;
+    transition: opacity 250ms var(--main-cub),
+    visibility 250ms var(--main-cub);
 }
 
 .modal {
@@ -864,7 +868,11 @@ li h2 {
     min-width: 528px;
     min-height: 581px;
     background-color: var(--bgc);
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--main-cub);
 }
+
 
 .modal-button {
     position: absolute;
@@ -876,11 +884,29 @@ li h2 {
     padding: 0;
     min-width: 30px;
     height: 30px;
-    cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: transparent;
     border-radius: 50%;
-    fill: #000000;
+
+    opacity: 1;
+
+    transition: opacity 250ms var(--main-cub);
+}
+
+.backdrop.is-hidden {
+     opacity: 0;
+     pointer-events: none;
+     visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.exit-icon {
+    padding: 1px;
+    width: 11px;
+    height: 11px;
 }
 
 .modal-button:hover,
